@@ -1,0 +1,9 @@
+{
+  "name": "sanu-dutta-profile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal profile site for Sanu Dutta with AI assistant and Calendly booking.",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
