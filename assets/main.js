@@ -133,4 +133,24 @@
   /* Footer year */
   const y = document.querySelector("#year");
   if (y) y.textContent = new Date().getFullYear();
+
+  /* Booking widget injection (Contact page). Builds the Calendly embed from config
+     so the HTML file stays free of the embed markup. */
+  const mount = document.querySelector("#calendlyMount");
+  if (mount) {
+    const base = (window.SANU_CONFIG && window.SANU_CONFIG.calendlyUrl) || "";
+    if (base) {
+      const sep = base.indexOf("?") === -1 ? "?" : "&";
+      const url = base + sep + "hide_gdpr_banner=1&background_color=0f1f38&text_color=e2e8f0&primary_color=c8a04e";
+      const w = document.createElement("div");
+      w.className = "calendly-inline-widget";
+      w.setAttribute("data-url", url);
+      w.style.cssText = "min-width:320px;height:660px;border-radius:14px;overflow:hidden;";
+      mount.appendChild(w);
+      const s = document.createElement("script");
+      s.src = "https://assets.calendly.com/assets/external/widget.js";
+      s.async = true;
+      document.body.appendChild(s);
+    }
+  }
 })();
