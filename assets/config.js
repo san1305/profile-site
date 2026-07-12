@@ -7,6 +7,6 @@
    2. chatEndpoint → leave as "/api/chat" when hosted on Vercel/Netlify.
    ============================================================ */
 window.SANU_CONFIG = {
-  calendlyUrl: "https://calendly.com/sanu-dutta",
+  calendlyUrl: "https://calendly.com/sanu-dutta/30min",
   chatEndpoint: "/api/chat"
 };
